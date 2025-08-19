@@ -1,66 +1,93 @@
-# 🛒 MockMall
+# 🛒 MockMall – E-Commerce Sample Project
 
-**MockMall** is a sample **E-commerce web application** built for **Devian Agency** to showcase scalable, modern, and developer-friendly e-commerce solutions.  
-This project acts as a **demonstration model** for clients and internal development, highlighting how Devian structures, designs, and deploys web applications.
-
----
-
-## ✨ Why MockMall?
-
-E-commerce is one of the most common yet complex web application categories. MockMall was built to:
-
-- ✅ Provide a **sample e-commerce store** for Devian’s portfolio.  
-- ✅ Demonstrate **best practices** in modern full-stack development.  
-- ✅ Showcase **Devian’s capabilities** in UI/UX, backend engineering, and scalability.  
-- ✅ Serve as a **starter template** for future e-commerce projects.  
-- ✅ Act as a **teaching/demo tool** for new developers at Devian.
+MockMall is a **sample e-commerce platform** developed by **Devian Agency** to demonstrate **modern web application architecture**, **best practices**, and **scalable design patterns**.  
+It acts as a **reference implementation** for internal projects and as a **client showcase** to highlight Devian’s technical and design expertise.  
 
 ---
 
-## 🔎 What is MockMall?
+## 📖 Table of Contents
 
-MockMall is not a production-ready store but a **demo project**. It simulates an online shopping experience with:
-
-- 🛍️ Product listing, search, and filtering  
-- 🧾 Cart and checkout flow  
-- 👤 Basic user authentication (login, register)  
-- 📦 Order placement simulation  
-- 🎨 Responsive and modern UI (Devian Design System)  
-- ⚡ Scalable backend structure with hybrid caching  
-
----
-
-## 🌍 Where is it used?
-
-- **Devian Agency Portfolio** → Showcasing client-ready e-commerce solutions.  
-- **Demo to Clients** → As a starting point for customized e-commerce apps.  
-- **Internal Devian Development** → Acts as a boilerplate for future e-commerce builds.  
-- **Learning Resource** → Teaching Devian’s junior devs about modern web stacks.  
+- [Overview](#-overview)  
+- [Why MockMall](#-why-mockmall)  
+- [Scope](#-scope)  
+- [System Architecture](#-system-architecture)  
+- [Technology Stack](#-technology-stack)  
+- [Features](#-features)  
+- [Setup & Installation](#-setup--installation)  
+- [Environment Variables](#-environment-variables)  
+- [Development Workflow](#-development-workflow)  
+- [Roadmap](#-roadmap)  
+- [Future Direction](#-future-direction)  
+- [License](#-license)  
+- [Contact](#-contact)  
 
 ---
 
-## ⚙️ How does it work?
+## 📝 Overview
 
-### 🏗️ Tech Stack
+**MockMall** is designed to:  
 
-**Frontend**  
-- Next.js (TypeScript)  
-- Tailwind CSS (Custom Devian UI Kit)  
-- Zustand / Redux for state management  
-
-**Backend**  
-- Express.js / Node.js  
-- MongoDB + Redis (hybrid approach for caching + scalability)  
-- RESTful APIs with proper controllers  
-
-**Other Integrations**  
-- Cloudinary (media & file storage)  
-- Razorpay (dummy checkout/payment simulation)  
-- Session & Token-based authentication  
+- Showcase Devian’s capability in building **enterprise-grade e-commerce applications**.  
+- Provide a **reference architecture** for future e-commerce projects.  
+- Demonstrate a **scalable hybrid data model** using **MongoDB + Redis**.  
+- Serve as a **developer onboarding project** to align with Devian’s engineering standards.  
 
 ---
 
-## 🔧 Setup Instructions
+## 🎯 Why MockMall
+
+- **Client Demonstration** → A ready-to-show sample project for prospects.  
+- **Standardization** → Establishes a baseline structure for future Devian projects.  
+- **Internal Training** → Helps new developers understand Devian’s code practices.  
+- **Innovation Sandbox** → A testing ground for integrating new tools, APIs, and workflows.  
+
+---
+
+## 📦 Scope
+
+MockMall simulates a complete shopping flow:  
+
+- Product catalog with filters & search  
+- Cart management (client + server sync)  
+- Checkout with payment simulation  
+- Authentication (sessions + JWT)  
+- Order management (demo mode)  
+- Responsive, scalable, and optimized UI  
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+- **Next.js (TypeScript)** → SSR + SSG for performance  
+- **Tailwind CSS + Devian UI Kit** → Scalable, responsive design  
+- **State Management** → Zustand / Redux  
+
+### Backend
+- **Express.js (Node.js)** → RESTful API layer  
+- **MongoDB** → Persistent product, order, user data  
+- **Redis** → Real-time caching for sessions and product queries  
+
+### Integrations
+- **Cloudinary** → Media & asset storage  
+- **Razorpay (Test Mode)** → Payment simulation  
+- **Authentication** → Sessions + JWT  
+
+---
+
+## 🚀 Features
+
+- Modern & responsive UI with reusable components  
+- Product search, filtering, and sorting  
+- Cart persistence (local + server sync)  
+- Simulated checkout process  
+- User authentication & sessions  
+- Cloud-based media management  
+- Caching layer for scalability  
+
+---
+
+## ⚙️ Setup & Installation
 
 ### 1. Clone Repository
 ```bash
@@ -71,7 +98,8 @@ cd mockmall
 ```bash
 yarn
 ```
-### 3. Environment variable
+
+### 3. Configure .env
 ```bash
 # Database
 MONGO_URI=your_mongo_url
@@ -82,69 +110,70 @@ CLOUDINARY_NAME=xxxx
 CLOUDINARY_API_KEY=xxxx
 CLOUDINARY_API_SECRET=xxxx
 
-# Razorpay (Test Mode)
+# Razorpay
 RAZORPAY_KEY=xxxx
 RAZORPAY_SECRET=xxxx
 
 # Authentication
 SESSION_SECRET=xxxx
 JWT_SECRET=xxxx
+
 ```
-### 4. Run Development Server
+
+### 4. Run Application
 ```bash
-yarn dev
-```
-### 5. Build for Production
-```bash
-yarn build
-yarn start
+npm run dev       # development
+npm run build     # build for production
+npm start         # run production build
 ```
 
-## 🚀 Features
+---
 
-- 🔥 Modern & responsive UI with Tailwind + custom components
-- 🔍 Smart search & product filtering
-- 🛒 Cart management with local & server sync
-- 📦 Simulated checkout & order system
-- 🔐 Authentication (sessions + JWT)
-- ⚡ Redis caching for performance
-- ☁️ Cloudinary integration for product images
-- 💳 Razorpay integration (test mode)
+## 🔄 Development Workflow
 
-## 🧩 Project Needs
+- **Branching** → `main` (stable), `dev` (active development), feature branches per task  
+- **Commits** → Conventional commits (`feat:`, `fix:`, `docs:`, etc.)  
+- **CI/CD** → Automated testing & deployment (planned)  
+- **Code Quality** → Prettier + ESLint enforced  
 
-To extend MockMall into a full-scale production-ready store, it would require:
+---
 
-- Robust Authentication → OAuth2, TOTP, and multi-device sessions
-- Admin Dashboard → For product, order, and user management
-- Inventory Management System → Real-time stock sync
-- Payment Gateway Production Mode → Full Razorpay/Stripe integration
-- Scalable Hosting → Vercel (frontend), Render/Heroku/AWS (backend)
-- CI/CD Pipeline → Automated deployment & testing
+## 📌 Roadmap
 
-## 🛠️ Development Roadmap
+- [ ] Product reviews & ratings  
+- [ ] Wishlist & saved items  
+- [ ] Admin dashboard (product & order management)  
+- [ ] Real payment gateway integration (Stripe/Razorpay live)  
+- [ ] Real-time notifications with WebSockets  
 
-- Product Reviews & Ratings
-- Wishlist & Saved Items
-- Multi-vendor Support
-- Real-time Notifications (Socket.io)
-- AI-powered Product Recommendations
+---
 
-## 📌 Then (Future of MockMall)
+## 🔮 Future Direction
 
-MockMall will evolve into:
+MockMall is envisioned to evolve into:  
 
-- A ready-to-deploy boilerplate for Devian clients.
-- A training project for Devian’s in-house team.
-- A case study to showcase Devian’s design & development excellence.
+- A **ready-to-deploy e-commerce boilerplate** for Devian clients  
+- A **training ground** for onboarding engineers  
+- A **showcase platform** demonstrating Devian’s design + dev synergy  
+- An **accelerator template** to reduce delivery time for e-commerce solutions  
 
-## 👨‍💻 Contributing
-This is an internal Devian project. Contributions are limited to the Devian development team.
-For suggestions or client-specific customizations, contact Devian Agency.
+---
+
+## 📜 License
+
+This project is proprietary and maintained by **Devian Agency**.  
+Unauthorized distribution or usage outside Devian is prohibited.  
+
+---
 
 ## 📬 Contact
 
-Devian Agency
-- 🌐 Website: https://devian.in
-- 📧 Email: devian.agency@gmail.com
-- 📍 Founder & CEO: Gajender
+**Devian Agency**  
+🌐 Website: [Devian](https://devian.agency)  
+📧 Email: devian.agency@gmail.com  
+👨‍💻 Founder & CEO: Gajender  
+
+---
+
+
+
