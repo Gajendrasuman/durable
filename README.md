@@ -1,2 +1,2 @@
-# Durable
+# Mockmall
 ### An Ecomm store
